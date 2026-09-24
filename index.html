@@ -107,6 +107,39 @@
   .hero .kicker{display:inline-block;font-size:14px;font-weight:900;color:var(--teal-mid);letter-spacing:.12em;margin-bottom:14px;padding:6px 14px;border-left:4px solid var(--teal-mid);background:var(--wash-soft);border-radius:0 4px 4px 0;}
 
   /* ---------- service ---------- */
+  /* service diagram */
+  .sdiag{display:grid;grid-template-columns:1fr 96px 1.25fr 96px 1fr;gap:0;align-items:stretch;margin-bottom:26px;}
+  .sd-col{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px 22px;}
+  .sd-cap{font-size:12px;letter-spacing:.14em;font-weight:900;color:var(--teal-mid);margin-bottom:12px;}
+  .sd-col ul{list-style:none;margin:0;padding:0;}
+  .sd-col li{font-size:14.5px;color:var(--ink-2);font-weight:700;padding:8px 0 8px 22px;position:relative;border-bottom:1px dashed var(--line);}
+  .sd-col li:last-child{border-bottom:none;}
+  .sd-col li::before{content:"";position:absolute;left:4px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--wash);border:2px solid var(--teal-mid);}
+  .sd-out li::before{background:var(--teal);border-color:var(--teal);}
+  .sd-ai{background:var(--teal-deep);border-color:var(--teal-deep);color:#fff;display:flex;flex-direction:column;}
+  .sd-ai .sd-cap{color:var(--wash);}
+  .sd-core{font-size:clamp(20px,2.2vw,26px);font-weight:900;line-height:1.3;margin-bottom:14px;}
+  .sd-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+  .sd-chips span{font-size:12.5px;font-weight:900;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 11px;}
+  .sd-note{font-size:13px;color:rgba(255,255,255,.8);line-height:1.7;margin-top:auto;padding-top:12px;border-top:1px solid rgba(255,255,255,.18);}
+  .sd-arrow{position:relative;display:flex;align-items:center;justify-content:center;}
+  .sd-arrow::before{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:var(--teal-mid);}
+  .sd-arrow::after{content:"";position:absolute;right:2px;top:50%;width:10px;height:10px;border-top:3px solid var(--teal-mid);border-right:3px solid var(--teal-mid);transform:translateY(-50%) rotate(45deg);}
+  .sd-arrow span{position:absolute;top:calc(50% + 12px);left:50%;transform:translateX(-50%);width:92px;text-align:center;line-height:1.4;font-size:11px;font-weight:900;color:var(--teal-mid);background:var(--bg);padding:2px 0;}
+  @media(max-width:960px){
+    .sdiag{grid-template-columns:1fr;}
+    .sd-arrow{height:64px;}
+    .sd-arrow::before{left:50%;right:auto;top:8px;bottom:8px;width:3px;height:auto;transform:translateX(-50%);}
+    .sd-arrow::after{right:auto;left:50%;top:auto;bottom:8px;transform:translateX(-50%) rotate(135deg);}
+    .sd-arrow span{top:50%;left:calc(50% + 14px);transform:translateY(-50%);width:auto;max-width:60%;text-align:left;}
+  }
+  .sflow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:44px;}
+  .sf-step{position:relative;background:var(--wash-soft);border-radius:8px;padding:16px 14px 14px;display:flex;flex-direction:column;gap:4px;}
+  .sf-step b{font-size:12px;letter-spacing:.14em;color:var(--teal-mid);}
+  .sf-step span{font-size:15px;font-weight:900;color:var(--teal);line-height:1.4;}
+  .sf-step small{font-size:12px;color:var(--ink-2);line-height:1.6;}
+  .sf-step:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;width:0;height:0;border-left:9px solid var(--wash-soft);border-top:9px solid transparent;border-bottom:9px solid transparent;transform:translateY(-50%);z-index:1;}
+  @media(max-width:860px){.sflow{grid-template-columns:repeat(2,1fr);}.sf-step:not(:last-child)::after{display:none;}}
   .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;}
   .ft{background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:8px;padding:30px 28px;}
   .ft h3{font-size:18px;color:var(--teal);margin-bottom:10px;}
@@ -361,8 +394,8 @@
     <a href="#" class="brand"><span class="mark"></span><span class="nm">ゲンバ<i>AI</i></span></a>
     <nav class="hnav">
       <a href="#service">サービス</a>
-      <a href="#industry">業種別</a>
       <a href="#demo">デモ</a>
+      <a href="#industry">業種別</a>
       <a href="#tech">技術領域</a>
       <a href="#flow">進め方</a>
       <a href="#security">セキュリティ</a>
@@ -390,7 +423,7 @@
     </div>
     <div class="ctas">
       <a href="#contact" class="cta-card cta-o">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
         現場を見て<br>ほしい
       </a>
       <a href="#service" class="cta-card cta-s">
@@ -408,20 +441,62 @@
       <div class="big">SERVICE</div>
       <div class="lbl">SERVICE</div>
       <h2>AIソリューション開発事業</h2>
-      <p>御社の業務課題に対して、オーダーメイドのAIソリューションを開発する受託開発サービスです。要件定義からPoC（試作検証）、本開発、システム実装、運用支援までを一気通貫で伴走します。既製のAIツールを売るのではなく、御社の仕事の流れに合わせて設計し、既存の基幹システム・Excel・紙の運用と繋いで動くところまで作ります。</p>
+      <p>御社の業務課題に合わせて、AIをオーダーメイドで開発する受託開発サービスです。既製ツールを売るのではなく、いまの仕事の流れに AI を組み込み、動くところまで作ります。</p>
     </div>
+
+    <div class="sdiag" aria-label="サービスの全体像">
+      <div class="sd-col sd-in">
+        <div class="sd-cap">いま、現場と事務所のあいだにあるもの</div>
+        <ul>
+          <li>紙・FAXの注文書、伝票</li>
+          <li>電話・メールの問い合わせ</li>
+          <li>図面・写真・契約書</li>
+          <li>Excel・基幹システム</li>
+          <li>ベテランの頭の中</li>
+        </ul>
+      </div>
+      <div class="sd-arrow" aria-hidden="true"><span>読む・写す・下書き・答える を引き取る</span></div>
+      <div class="sd-col sd-ai">
+        <div class="sd-cap">ゲンバAIがつくるもの</div>
+        <div class="sd-core">御社専用のAI</div>
+        <div class="sd-chips">
+          <span>RAG・ナレッジ検索</span><span>OCR × LLM</span><span>AIエージェント</span><span>画像認識</span><span>予測・最適化</span><span>音声・電話AI</span>
+        </div>
+        <div class="sd-note">既存の基幹システム・Excel・紙の運用はそのまま。その手前と後ろの手作業を AI が担当します。</div>
+      </div>
+      <div class="sd-arrow" aria-hidden="true"><span>人は最後の確認だけ</span></div>
+      <div class="sd-col sd-out">
+        <div class="sd-cap">現場に返ってくるもの</div>
+        <ul>
+          <li>転記済みのデータ</li>
+          <li>見積・積算・報告書の下書き</li>
+          <li>根拠つきの回答</li>
+          <li>問い合わせへの一次返信</li>
+          <li>事務所の残業が、現場の時間に</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sflow" aria-label="進め方">
+      <div class="sf-step"><b>01</b><span>ヒアリング・現場診断</span><small>無料</small></div>
+      <div class="sf-step"><b>02</b><span>要件定義・技術選定</span><small>オンプレ／クラウドもここで決定</small></div>
+      <div class="sf-step"><b>03</b><span>PoC（試作・検証）</span><small>1〜2ヶ月・実データで測定</small></div>
+      <div class="sf-step"><b>04</b><span>本開発・実装</span><small>既存システムと接続</small></div>
+      <div class="sf-step"><b>05</b><span>運用支援・改善</span><small>社内で回るまで伴走</small></div>
+    </div>
+
     <div class="feat">
       <div class="ft">
         <h3>オーダーメイド</h3>
-        <p>業務フロー・帳票・データの実態を見てから設計します。パッケージに業務を合わせるのではなく、業務にAIを合わせます。</p>
+        <p>業務フロー・帳票・データの実態を見てから設計します。業務にAIを合わせます。</p>
       </div>
       <div class="ft">
         <h3>一気通貫</h3>
-        <p>要件定義・技術選定・PoC・本開発・運用改善まで、同じチームが最後まで担当します。作って終わりにしません。</p>
+        <p>要件定義から運用改善まで、同じチームが最後まで担当します。</p>
       </div>
       <div class="ft">
         <h3>オンプレミス／クラウド両対応</h3>
-        <p>図面・契約書・顧客情報を外に出せない場合は、御社内で完結するローカルLLM構成で構築します。クラウド構成も選べます。</p>
+        <p>図面・契約書・顧客情報を外に出せない場合は、御社内で完結する構成で構築します。</p>
       </div>
     </div>
     <div class="focus">
@@ -438,7 +513,62 @@
   </div>
 </section>
 
-<section class="alt" id="industry">
+<section class="alt" id="demo">
+  <div class="wrap">
+    <div class="shead">
+      <div class="big">DEMO</div>
+      <div class="lbl">DEMO</div>
+      <h2>触って試せる、RAGチャットボット</h2>
+      <p>技術領域のひとつ「RAG・ナレッジ検索」を、実際に動くデモでご覧いただけます。社内マニュアル・契約書・FAQをAIが検索し、該当箇所だけを根拠に回答します。製造業・金融業のサンプル文書を用意しました。</p>
+    </div>
+<div class="dhead"><div class="dintro"><h3 id="h1" style="font-size:20px;color:var(--teal);">社内マニュアル・契約書・FAQを、話し言葉で聞ける。</h3>
+  <p>左の文書をAIが検索し、該当箇所だけを根拠にして回答します。回答内の番号を押すと、根拠となった文書の箇所が開きます。文書はすべて架空のサンプルです。</p></div>
+  <div class="seg" role="group" aria-label="業種"><button id="seg-mfg" aria-pressed="true">製造業</button><button id="seg-fin" aria-pressed="false">金融業</button></div>
+</div>
+
+<div class="dgrid">
+  <aside class="dcard">
+    <h2>登録されている文書</h2>
+    <div id="docs"></div>
+    <div class="docnote">実際の導入では、御社の既存文書（Word・PDF・Excel・紙のスキャン）をそのまま読み込みます。</div>
+  </aside>
+
+  <section class="dcard dchat" aria-label="チャット">
+    <div class="log" id="log"></div>
+    <div class="chips" id="chips"></div>
+    <div class="composer">
+      <textarea id="q" rows="1" placeholder="質問を入力（例：不良品が出たときの手順は？）" aria-label="質問"></textarea>
+      <button class="send" id="send">送信</button>
+    </div>
+  </section>
+
+  <aside>
+    <div class="dcard">
+      <h2>裏側で起きていること</h2>
+      <div class="rsteps">
+        <div class="rstep" id="s1" data-state=""><div class="dot">1</div><div><b>質問を解析</b><span id="s1t">キーワードと意図を抽出</span></div></div>
+        <div class="rstep" id="s2" data-state=""><div class="dot">2</div><div><b>文書を検索</b><span id="s2t">関連度の高い箇所を上位3件抽出</span><div class="hits" id="hits"></div></div></div>
+        <div class="rstep" id="s3" data-state=""><div class="dot">3</div><div><b>根拠つきで回答を生成</b><span id="s3t">該当箇所のみを根拠にAIが要約</span></div></div>
+      </div>
+      <div class="mode" id="mode">AIの準備中です…</div>
+    </div>
+    <div class="dcard" style="margin-top:14px;">
+      <h2>導入で見込める効果（例）</h2>
+      <div class="kpi">
+        <div class="kp"><span>従業員の問い合わせ対応時間</span><b>−70<small>%</small></b></div>
+        <div class="kp"><span>回答の均一化（担当者による差）</span><b>解消</b></div>
+        <div class="kp"><span>マニュアルを探す時間</span><b>数分→数秒</b></div>
+        <div class="note">効果は業務内容・文書の整備状況により異なります。PoCで御社の実データを使って測定します。</div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<dialog id="pv"><div class="pv" id="pvin"></div></dialog>
+  </div>
+</section>
+
+<section id="industry">
   <div class="wrap">
     <div class="shead">
       <div class="big">INDUSTRY</div>
@@ -541,61 +671,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="demo">
-  <div class="wrap">
-    <div class="shead">
-      <div class="big">DEMO</div>
-      <div class="lbl">DEMO</div>
-      <h2>触って試せる、RAGチャットボット</h2>
-      <p>技術領域のひとつ「RAG・ナレッジ検索」を、実際に動くデモでご覧いただけます。社内マニュアル・契約書・FAQをAIが検索し、該当箇所だけを根拠に回答します。製造業・金融業のサンプル文書を用意しました。</p>
-    </div>
-<div class="dhead"><div class="dintro"><h3 id="h1" style="font-size:20px;color:var(--teal);">社内マニュアル・契約書・FAQを、話し言葉で聞ける。</h3>
-  <p>左の文書をAIが検索し、該当箇所だけを根拠にして回答します。回答内の番号を押すと、根拠となった文書の箇所が開きます。文書はすべて架空のサンプルです。</p></div>
-  <div class="seg" role="group" aria-label="業種"><button id="seg-mfg" aria-pressed="true">製造業</button><button id="seg-fin" aria-pressed="false">金融業</button></div>
-</div>
-
-<div class="dgrid">
-  <aside class="dcard">
-    <h2>登録されている文書</h2>
-    <div id="docs"></div>
-    <div class="docnote">実際の導入では、御社の既存文書（Word・PDF・Excel・紙のスキャン）をそのまま読み込みます。</div>
-  </aside>
-
-  <section class="dcard dchat" aria-label="チャット">
-    <div class="log" id="log"></div>
-    <div class="chips" id="chips"></div>
-    <div class="composer">
-      <textarea id="q" rows="1" placeholder="質問を入力（例：不良品が出たときの手順は？）" aria-label="質問"></textarea>
-      <button class="send" id="send">送信</button>
-    </div>
-  </section>
-
-  <aside>
-    <div class="dcard">
-      <h2>裏側で起きていること</h2>
-      <div class="rsteps">
-        <div class="rstep" id="s1" data-state=""><div class="dot">1</div><div><b>質問を解析</b><span id="s1t">キーワードと意図を抽出</span></div></div>
-        <div class="rstep" id="s2" data-state=""><div class="dot">2</div><div><b>文書を検索</b><span id="s2t">関連度の高い箇所を上位3件抽出</span><div class="hits" id="hits"></div></div></div>
-        <div class="rstep" id="s3" data-state=""><div class="dot">3</div><div><b>根拠つきで回答を生成</b><span id="s3t">該当箇所のみを根拠にAIが要約</span></div></div>
-      </div>
-      <div class="mode" id="mode">AIの準備中です…</div>
-    </div>
-    <div class="dcard" style="margin-top:14px;">
-      <h2>導入で見込める効果（例）</h2>
-      <div class="kpi">
-        <div class="kp"><span>従業員の問い合わせ対応時間</span><b>−70<small>%</small></b></div>
-        <div class="kp"><span>回答の均一化（担当者による差）</span><b>解消</b></div>
-        <div class="kp"><span>マニュアルを探す時間</span><b>数分→数秒</b></div>
-        <div class="note">効果は業務内容・文書の整備状況により異なります。PoCで御社の実データを使って測定します。</div>
-      </div>
-    </div>
-  </aside>
-</div>
-
-<dialog id="pv"><div class="pv" id="pvin"></div></dialog>
   </div>
 </section>
 
