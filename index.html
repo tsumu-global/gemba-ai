@@ -107,15 +107,8 @@
   .hero .kicker{display:inline-block;font-size:14px;font-weight:900;color:var(--teal-mid);letter-spacing:.12em;margin-bottom:14px;padding:6px 14px;border-left:4px solid var(--teal-mid);background:var(--wash-soft);border-radius:0 4px 4px 0;}
 
   /* ---------- service ---------- */
-  /* service subheads */
-  .ssub{display:flex;align-items:baseline;gap:14px;margin:0 0 18px;padding-top:44px;border-top:1px solid var(--line);}
-  .ssub.first{padding-top:0;border-top:none;}
-  .ssub .k{font-size:11.5px;letter-spacing:.24em;font-weight:900;color:var(--teal-mid);white-space:nowrap;}
-  .ssub h3{font-size:clamp(18px,2vw,22px);color:var(--teal);line-height:1.4;}
-  .ssub p{font-size:13.5px;color:var(--ink-3);margin-left:auto;font-weight:500;}
-  @media(max-width:700px){.ssub{flex-wrap:wrap;gap:6px 12px;}.ssub p{margin-left:0;flex-basis:100%;}}
   /* service diagram */
-  .sdiag{display:grid;grid-template-columns:1fr 96px 1.25fr 96px 1fr;gap:0;align-items:stretch;}
+  .sdiag{display:grid;grid-template-columns:1fr 96px 1.25fr 96px 1fr;gap:0;align-items:stretch;margin-bottom:26px;}
   .sd-col{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px 22px;}
   .sd-cap{font-size:12px;letter-spacing:.14em;font-weight:900;color:var(--teal-mid);margin-bottom:12px;}
   .sd-col ul{list-style:none;margin:0;padding:0;}
@@ -140,7 +133,7 @@
     .sd-arrow::after{right:auto;left:50%;top:auto;bottom:8px;transform:translateX(-50%) rotate(135deg);}
     .sd-arrow span{top:50%;left:calc(50% + 14px);transform:translateY(-50%);width:auto;max-width:60%;text-align:left;}
   }
-  .sflow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+  .sflow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:44px;}
   .sf-step{position:relative;background:var(--wash-soft);border-radius:8px;padding:16px 14px 14px;display:flex;flex-direction:column;gap:4px;}
   .sf-step b{font-size:12px;letter-spacing:.14em;color:var(--teal-mid);}
   .sf-step span{font-size:15px;font-weight:900;color:var(--teal);line-height:1.4;}
@@ -151,7 +144,7 @@
   .ft{background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:8px;padding:30px 28px;}
   .ft h3{font-size:18px;color:var(--teal);margin-bottom:10px;}
   .ft p{font-size:15px;color:var(--ink-2);}
-  .focus{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+  .focus{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);margin-top:48px;border:1px solid var(--line);border-radius:8px;overflow:hidden;}
   .fx{background:var(--bg-alt);padding:20px 22px;font-size:14px;color:var(--ink-2);font-weight:500;}
   .fx b{display:block;font-size:17px;color:var(--teal);font-weight:900;margin-bottom:4px;}
   .fnote{margin-top:16px;font-size:14px;color:var(--ink-3);}
@@ -451,7 +444,6 @@
       <p>御社の業務課題に合わせて、AIをオーダーメイドで開発する受託開発サービスです。既製ツールを売るのではなく、いまの仕事の流れに AI を組み込み、動くところまで作ります。</p>
     </div>
 
-    <div class="ssub first"><span class="k">01 ／ 全体像</span><h3>何を引き取り、何が返ってくるか</h3><p>紙・電話・写真とシステムのあいだの手作業を、AIが担当します</p></div>
     <div class="sdiag" aria-label="サービスの全体像">
       <div class="sd-col sd-in">
         <div class="sd-cap">いま、現場と事務所のあいだにあるもの</div>
@@ -485,7 +477,6 @@
       </div>
     </div>
 
-    <div class="ssub"><span class="k">02 ／ 進め方</span><h3>小さく試して、効いたものだけ本開発</h3><p>ヒアリングと現場診断は無料です</p></div>
     <div class="sflow" aria-label="進め方">
       <div class="sf-step"><b>01</b><span>ヒアリング・現場診断</span><small>無料</small></div>
       <div class="sf-step"><b>02</b><span>要件定義・技術選定</span><small>オンプレ／クラウドもここで決定</small></div>
@@ -494,7 +485,6 @@
       <div class="sf-step"><b>05</b><span>運用支援・改善</span><small>社内で回るまで伴走</small></div>
     </div>
 
-    <div class="ssub"><span class="k">03 ／ 私たちの特徴</span><h3>作り方で選ばれています</h3></div>
     <div class="feat">
       <div class="ft">
         <h3>オーダーメイド</h3>
@@ -509,7 +499,6 @@
         <p>図面・契約書・顧客情報を外に出せない場合は、御社内で完結する構成で構築します。</p>
       </div>
     </div>
-    <div class="ssub"><span class="k">04 ／ 対応業種</span><h3>業種ごとの、代表的な使いどころ</h3><p>詳しくは下の「業種別に、何ができるか。」へ</p></div>
     <div class="focus">
       <div class="fx"><b>製造</b>見積・受発注・技能継承</div>
       <div class="fx"><b>建設</b>施工写真・安全書類・積算</div>
